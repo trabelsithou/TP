@@ -1,0 +1,6 @@
+
+|squid:S00116 "XRename this field "MyPREFERENCES" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°ÓÜşÿÿÿÿ8ÊÂ÷Üë-
+msquid:S2674y"JCheck the return value of the "read" call to see how many bytes were read.(ë¥áïøÿÿÿÿ8ş¿ÊŞë-
+Asquid:S1148}"#Use a logger to log this exception.(Ç’Çê8¬šÊŞë-
+ƒsquid:S1450"`Remove the "sharedpreferences" field and declare it as a local variable in the relevant methods.(®à·ëÿÿÿÿÿ8èÂøÜë-
+Wsquid:S4719{"9Replace charset name argument with StandardCharsets.UTF_8(Şİ½8¬šÊŞë-

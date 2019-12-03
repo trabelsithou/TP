@@ -1,0 +1,5 @@
+
+asquid:UselessImportCheck"1Remove this unused import 'android.widget.Toast'.(©›пНъяяяя8жеУал-
+msquid:S2674G"JCheck the return value of the "read" call to see how many bytes were read.(лҐбпшяяяя8сЧТал-
+Wsquid:S4719I"9Replace charset name argument with StandardCharsets.UTF_8(ЮЭЏЅ8сЧТал-
+Asquid:S1148K"#Use a logger to log this exception.(З’Зк8сЧТал-

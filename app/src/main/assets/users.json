@@ -1,0 +1,24 @@
+[
+  {
+    "fullname": "Marie doe",
+    "email": "marie@gmail.com",
+    "present": false,
+    "type": "student",
+    "picture": "https://univarsity.org/wp-content/uploads/2017/02/foreign%20graduate%20comp.jpg"
+  },
+  {
+    "fullname": "Mario doe",
+    "email": "mario@gmail.com",
+    "present": false,
+    "type": "student",
+    "picture": "https://www.bestfunforall.com/freepik1/imgs/Young%20man%20student%20standing%20by%20the%20university%20Wallpapers%201.jpg"
+  },
+  {
+    "fullname": "Ahmed doe",
+    "email": "ahmed@gmail.com",
+    "present": false,
+    "type": "teacher",
+    "password": "testtest",
+    "picture": "https://elearningindustry.com/wp-content/uploads/2019/10/professional-development-tools-for-teachers.jpg"
+  }
+]

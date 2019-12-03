@@ -1,0 +1,4 @@
+
+ƒsquid:S1450"`Remove the "sharedpreferences" field and declare it as a local variable in the relevant methods.(®ΰ·λÿÿÿÿÿ8ªράλ-
+|squid:S00116"XRename this field "MyPREFERENCES" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°Σάώÿÿÿÿ8Νάράλ-
+Tsquid:S1068"6Remove this unused "UI_ANIMATION_DELAY" private field.(ιζη8‹²ΊΫλ-
