@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.tp.myapplication.R;
 import com.tp.myapplication.adapter.StudentsAdapter;
+import com.tp.myapplication.data.Data;
 import com.tp.myapplication.model.User;
 
 import org.json.JSONArray;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     RecyclerView rvStudents;
-    private ArrayList<User> mData = new ArrayList<>();
+    private StudentsAdapter studentsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +38,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView.LayoutManager manager = new LinearLayoutManager(this);
         rvStudents.setLayoutManager(manager);
         loadStudents();
-        StudentsAdapter studentsAdapter = new StudentsAdapter(this, mData);
-        Log.d("", "initUi: " + mData.size());
+        studentsAdapter = new StudentsAdapter(this, Data.getInstance().getmData());
         rvStudents.setAdapter(studentsAdapter);
 
     }
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 if (jsonObject.getString("type").equals("student")) {
                     User user = new User(jsonObject.getString("fullname"), jsonObject.getBoolean("present"));
                     user.setImage(jsonObject.getString("picture"));
-                    mData.add(user);
+                    Data.getInstance().getmData().add(user);
                 }
             }
 
@@ -60,6 +60,15 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(this, "resume", Toast.LENGTH_LONG).show();
+        if (studentsAdapter != null) {
+            studentsAdapter.notifyDataSetChanged();
+        }
     }
 
     public String loadJSONFromAsset() {

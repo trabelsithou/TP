@@ -2,17 +2,22 @@ package com.tp.myapplication.adapter;
 
 import android.content.Context;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.tp.myapplication.R;
+import com.tp.myapplication.data.Constants;
 import com.tp.myapplication.model.User;
+import com.tp.myapplication.ui.DetailsStudentActivity;
 
 import java.util.ArrayList;
 
@@ -39,8 +44,8 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHo
 
     // binds the data to the TextView in each row
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        User user = mData.get(position);
+    public void onBindViewHolder(ViewHolder holder, final int position) {
+        final User user = mData.get(position);
         if (user.isPresent()) {
             holder.tvStatus.setText("Présent");
         } else {
@@ -48,6 +53,19 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHo
         }
         holder.tvName.setText(user.getFullName());
         Glide.with(context).load(user.getImage()).into(holder.imgPicture);
+        holder.llContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "click student " + user.getFullName(), Toast.LENGTH_SHORT).show();
+                startDetail(position);
+            }
+        });
+    }
+
+    private void startDetail(int position) {
+        Intent detail = new Intent(context, DetailsStudentActivity.class);
+        detail.putExtra(Constants.ARG_POSITION, position);
+        context.startActivity(detail);
     }
 
     // total number of rows
@@ -62,12 +80,14 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHo
         TextView tvName;
         TextView tvStatus;
         ImageView imgPicture;
+        LinearLayout llContainer;
 
         ViewHolder(View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tv_name);
             tvStatus = itemView.findViewById(R.id.tv_status);
             imgPicture = itemView.findViewById(R.id.img_picture);
+            llContainer = itemView.findViewById(R.id.ll_container);
         }
 
 

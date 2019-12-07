@@ -3,6 +3,7 @@
     package="com.tp.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,10 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.DetailsStudentActivity"></activity>
         <activity
             android:name=".ui.LoginActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
-
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.SplashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
